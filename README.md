@@ -13,84 +13,84 @@
 > Could be any FOL proof system, for fun we show sequent calculus below...
 ######  Identity Rules
 - Identity
-$$
+```math
 \dfrac{}{A \vdash A} (Id)
-$$
+```
 - Reflexivity
-$$
+```math
 \dfrac{}{t = t} (Ref)
-$$
+```
 - Substitution
-$$
+```math
 \dfrac{A(t), \Gamma \vdash \Delta}{s = t, A(s), \Gamma \vdash \Delta} (= L)
 \qquad
 \dfrac{\Gamma \vdash \Delta, A(t)}{\Gamma \vdash \Delta, s = t, A(s)} (= R)
-$$
+```
 ###### Structural Rules
 - Weakening
-$$
+```math
 \dfrac{\Gamma \vdash \Delta}{A, \Gamma \vdash \Delta} (WL)
 \qquad
 \dfrac{\Gamma \vdash \Delta}{\Gamma \vdash \Delta, A} (WR)
-$$
+```
 - Contraction
-$$
+```math
 \dfrac{A, A, \Gamma \vdash \Delta}{A, \Gamma \vdash \Delta} (CL)
 \qquad
 \dfrac{\Gamma \vdash \Delta, A, A}{\Gamma \vdash \Delta, A} (CR)
-$$
+```
 - Exchange
-$$
+```math
 \dfrac{\Gamma, A, B, \Pi \vdash \Delta}{\Gamma, B, A, \Pi \vdash \Delta} (XL)
 \qquad
 \dfrac{\Gamma \vdash \Delta, A, B, \Lambda}{\Gamma \vdash \Delta, B, A, \Lambda} (XR)
-$$
+```
 - (Cut)
-$$
+```math
 \dfrac{\Gamma \vdash \Delta, A \qquad A, \Pi \vdash \Lambda}{\Gamma, \Pi \vdash \Delta, \Lambda} (Cut)
-$$
+```
 ###### Propositional Rules
 - $\lnot$
-$$
+```math
 \dfrac{\Gamma \vdash \Delta, A}{\lnot A, \Gamma \vdash \Delta} (\lnot L)
 \qquad
 \dfrac{A, \Gamma \vdash \Delta}{\Gamma \vdash \Delta, \lnot A} (\lnot R)
-$$
+```
 - $\land$
-$$
+```math
 \dfrac{A,\Gamma \vdash \Delta}{A \land B, \Gamma \vdash \Delta} (\land L)
 \qquad
 \dfrac{B, \Gamma \vdash \Delta}{A \land B, \Gamma \vdash \Delta} (\land L)
 \qquad
 \dfrac{\Gamma \vdash \Delta, A \qquad \Gamma \vdash \Delta, B}{\Gamma \vdash \Delta, A \land B} (\land R)
-$$
+```
 - $\lor$
-$$
+```math
 \dfrac{A, \Gamma \vdash \Delta \qquad B, \Gamma \vdash \Delta}{A \lor B, \Gamma \vdash \Delta} (\lor L)
 \qquad
 \dfrac{\Gamma \vdash \Delta, A}{\Gamma \vdash \Delta, A \lor B} (\lor R)
 \qquad
 \dfrac{\Gamma \vdash \Delta, B}{\Gamma \vdash \Delta, A \lor B} (\lor R)
-$$
+```
 - $\implies$
-$$
+```math
 \dfrac{\Gamma \vdash \Delta, A \qquad B, \Pi \vdash \Lambda}{A \implies B, \Gamma, \Pi \vdash \Delta, \Lambda} (\implies L)
 \qquad
 \dfrac{A, \Gamma \vdash \Delta, B}{\Gamma \vdash \Delta, A \implies B} (\implies R)
-$$
+```
 ###### Quantifier Rules
 - $\forall$
-$$
+```math
 \dfrac{A(t), \Gamma \vdash \Delta}{\forall x \, A(x), \Gamma \vdash \Delta} (\forall L)
 \qquad
 \dfrac{\Gamma \vdash \Delta, A(a)}{\Gamma \vdash \Delta, \forall x \, A(x)} (\forall R)
-$$
+```
 - $\exists$
-$$
+```math
 \dfrac{A(a), \Gamma \vdash \Delta}{\exists x \, A(x), \Gamma \vdash \Delta} (\exists L)
 \qquad
 \dfrac{\Gamma \vdash \Delta, A(t)}{\Gamma \vdash \Delta, \exists x \, A(x)} (\exists R)
-$$
+```
 ##### Axioms
 ###### Robinson Axioms
 Let $x'$ denote successor. Take the following eight sentences as $Q_0$:
@@ -104,7 +104,7 @@ Let $x'$ denote successor. Take the following eight sentences as $Q_0$:
 - ($Q8$) $\forall x \, \forall y \, (x < y \iff \exists z \, (z' + x) = y)$
 Then $Q$ can be defined as $Q = \{ A : Q_0 \vDash A\}$
 ###### Induction Schema
-$$
+```math
 \forall y_1, \dots, \forall y_n ((A(0) \land \forall x (A(x) \implies A(x'))) \implies \forall x \, A(x))
-$$
+```
 $PA = Q + \text{ all such instances for every formula } A(x, y_1, \dots, y_n)$
