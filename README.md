@@ -1,17 +1,17 @@
 ## Axiomatized Theory
-##### Alphabet
+#### Alphabet
 * Standard logical symbols (plus equality): $\lnot \, \land \, \lor \, \implies \, \iff \, \forall \, \, \, \exists \, \, \, ( \, \, \, ) \, \, \, , \, \, \, v_0, v_1, \dots, v_n \, \, \, =$
 * Non-logical symbols in $\mathscr{L_A}$: $0 \, \, \, ' \, + \, \times \, <$
-##### Grammar
+#### Grammar
 - Terms are built from variables and $0$ by applying function symbols:
   - If $t$ is a term, $t'$ is a term (officially the function $'(t)$)
   - If $s, t$ are terms, then $(s + t)$ and $(s \times t)$ are terms
 * Atomic formulas have the form $s = t$ or $s < t$ where $s, t$ are terms
 * Formulas are built from atomic formulas using $\lnot \, \land \, \lor \, \implies \, \iff$ and quantifiers $\forall x \, \, \, \exists y$ in the usual first-order way
   * Similarly, a sentence is a formula with no free variables
-##### Rules of Inference
+#### Rules of Inference
 > Could be any FOL proof system, for fun we show sequent calculus below...
-######  Identity Rules
+#####  Identity Rules
 - Identity
 ```math
 \dfrac{}{A \vdash A} (Id)
@@ -26,7 +26,7 @@
 \qquad
 \dfrac{\Gamma \vdash \Delta, A(t)}{\Gamma \vdash \Delta, s = t, A(s)} (= R)
 ```
-###### Structural Rules
+##### Structural Rules
 - Weakening
 ```math
 \dfrac{\Gamma \vdash \Delta}{A, \Gamma \vdash \Delta} (WL)
@@ -49,7 +49,7 @@
 ```math
 \dfrac{\Gamma \vdash \Delta, A \qquad A, \Pi \vdash \Lambda}{\Gamma, \Pi \vdash \Delta, \Lambda} (Cut)
 ```
-###### Propositional Rules
+##### Propositional Rules
 - $\lnot$
 ```math
 \dfrac{\Gamma \vdash \Delta, A}{\lnot A, \Gamma \vdash \Delta} (\lnot L)
@@ -78,7 +78,7 @@
 \qquad
 \dfrac{A, \Gamma \vdash \Delta, B}{\Gamma \vdash \Delta, A \implies B} (\implies R)
 ```
-###### Quantifier Rules
+##### Quantifier Rules
 - $\forall$
 ```math
 \dfrac{A(t), \Gamma \vdash \Delta}{\forall x \, A(x), \Gamma \vdash \Delta} (\forall L)
@@ -91,8 +91,8 @@
 \qquad
 \dfrac{\Gamma \vdash \Delta, A(t)}{\Gamma \vdash \Delta, \exists x \, A(x)} (\exists R)
 ```
-##### Axioms
-###### Robinson Axioms
+#### Axioms
+##### Robinson Axioms
 Let $x'$ denote successor. Take the following eight sentences as $Q_0$:
 - ($Q1$) $\forall x \, \forall y \, (x' = y' \implies x = y)$
 - ($Q2$) $\forall x \, 0 \neq x'$
@@ -103,7 +103,7 @@ Let $x'$ denote successor. Take the following eight sentences as $Q_0$:
 - ($Q7$) $\forall x \, \forall y \, (x \times y') = ((x \times y) + x)$
 - ($Q8$) $\forall x \, \forall y \, (x < y \iff \exists z \, (z' + x) = y)$
 Then $Q$ can be defined as $Q = \{ A : Q_0 \vDash A\}$
-###### Induction Schema
+##### Induction Schema
 ```math
 \forall y_1, \dots, \forall y_n ((A(0) \land \forall x (A(x) \implies A(x'))) \implies \forall x \, A(x))
 ```
