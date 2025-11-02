@@ -1,0 +1,13 @@
+Checks: >-
+  clang-analyzer-*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  hicpp-*,
+  # …etc…
+  -readability-magic-numbers        # disable magic‑number warnings
+  -readability-identifier-naming    # disable “short name” / naming‑style checks
+
+WarningsAsErrors:    '*'           # keep the rest as errors if you like
+HeaderFilterRegex:   'src/.*'
+FormatStyle:         file
