@@ -7,7 +7,7 @@
   - If $`t`$ is a term, $`t'`$ is a term (officially the function $`'(t)`$)
   - If $`s, t`$ are terms, then $`(s + t)`$ and $`(s \times t)`$ are terms
 * Atomic formulas have the form $`s = t`$ or $`s < t`$ where $`s, t`$ are terms
-* Formulas are built from atomic formulas using $`\lnot \ \land \ \lor \ \implies \ \iff`$ and quantifiers $`\forall x \ \exists y`$ in the usual first-order way
+* Formulas are built from atomic formulas using $`\lnot \ \ \land \ \lor \implies \iff`$ and quantifiers $`\forall x \ \ \exists y`$ in the usual first-order way
   * Similarly, a sentence is a formula with no free variables
 #### Rules of Inference
 > Could be any FOL proof system, for fun we show sequent calculus below...
