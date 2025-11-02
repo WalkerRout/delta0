@@ -107,4 +107,4 @@ Then $`Q`$ can be defined as $`Q = \{ A : Q_0 \vDash A\}`$
 ```math
 \forall y_1, \dots, \forall y_n ((A(0) \land \forall x (A(x) \implies A(x'))) \implies \forall x A(x))
 ```
-$`PA = Q + \text{ all such instances for every formula } A(x, y_1, \dots, y_n)`$
+$`PA = Q + \text{all such instances for every formula } A(x, y_1, \dots, y_n)`$
